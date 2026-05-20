@@ -14,11 +14,12 @@ a {
 
 header {
   position: relative;
-  padding: 20px 0;
+  padding: 20px;
   background-color: aliceblue;
 }
 .menu {
   display: flex;
+  position: relative;
   width: 500px;
   margin: auto;
   text-align: center;
@@ -26,7 +27,6 @@ header {
 .menu > li {
   width: calc(100% / 3);
   position: relative;
-  top: 20px;
 }
 .menu > li > a {
   display: block;
@@ -44,11 +44,11 @@ header {
   left: 0;
   width: 100%;
   background-color: rgb(255, 203, 203);
-  z-index: 99;
+   z-index: 99;
 }
-.submenu > li > a {
+.submenu li a {
   display: block;
-  padding: 20px 0;
+  padding: 10px;
   color: #fff;
 }
 
@@ -66,9 +66,9 @@ header {
   background-color: rgba(196, 153, 153, 0.3);
 }
 
-.submenu.active {
+/* .submenu.active {
   display: block;
 }
 .header-bg.active {
   display: block;
-}
+} */

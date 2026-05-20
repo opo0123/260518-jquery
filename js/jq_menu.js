@@ -41,7 +41,19 @@ $(function () {
   //   });
 
   // 5. 전체 메뉴 + 헤더 배경
-  $(".menu").hover(function () {
-    $(".submenu, .header-bg").stop().slideToggle(300);
-  });
+  // $(".menu").hover(function () {
+  //   $(".submenu, .header-bg").stop().slideToggle(300);
+  // });
+
+  // 6. 각 서브 메뉴 + 헤더 배경
+  $(".menu > li").hover(
+    function () {
+      $(this).find(".submenu").stop().slideDown(400);
+      $(".header-bg").stop().slideDown(400);
+    },
+    function () {
+      $(this).find(".submenu").stop().slideUp(400);
+      $(".header-bg").stop().slideUp(400);
+    },
+  );
 });
