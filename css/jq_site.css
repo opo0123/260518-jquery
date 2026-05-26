@@ -88,7 +88,7 @@ img {
   padding: 40px 0;
 }
 .search-input {
-  width: 40%;
+  width: 60%;
   padding: 15px;
   border: none;
   border-radius: 10px;
@@ -100,7 +100,7 @@ img {
 }
 .tab-btn {
   padding: 12px 20px;
-  background: white;
+  background-color: white;
   border-radius: 10px;
   cursor: pointer;
 }
@@ -160,7 +160,8 @@ img {
   font-size: 18px;
 }
 .like-btn.active {
-  color: #0b7236;
+  background-color: #0b7236;
+  color: white;
 }
 
 /* 반응형 */

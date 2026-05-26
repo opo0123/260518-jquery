@@ -100,4 +100,37 @@ $(function () {
     // console.log(this); 각각 찍힘
     $(this).toggleClass("active");
   });
+
+  // 검색창 입력 필터링
+  // keyup : 키보드를 눌렀다 뗄 때 실행
+  $(".search-input").on("keyup", function () {
+    // val() : 입력한 값 가져오기
+    const inputValue = $(this).val().toLowerCase();
+
+    // filter() : 조건에 맞는 요소만 걸러내는 메서드
+    const filter = products.filter((item) =>
+      item.name.toLowerCase().includes(inputValue),
+    );
+    renderProducts(filter);
+  });
+
+  // 탭버튼 클릭 이벤트
+  $(".tab-btn").on("click", function () {
+    // 초기화 (active 제거)
+    $(".tab-btn").removeClass("active");
+
+    // 클릭한 버튼만 active 추가
+    $(this).addClass("active");
+
+    // 클릭한 버튼의 data-category 가져오기
+    const itemCategory = $(this).data("category");
+    // category가 all이면 상품 모두 출력
+    if (itemCategory === "all") {
+      renderProducts(products);
+    } else {
+      // 선택한 category 상품만 출력
+      const filter = products.filter((item) => item.category === itemCategory);
+      renderProducts(filter);
+    }
+  });
 });
